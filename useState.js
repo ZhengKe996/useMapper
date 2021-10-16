@@ -16,17 +16,3 @@ export function useState (mapper) {
     return state
 }
 
-
-/**
- * 使用方式：
- *      import { useState } from '../useState'
- *
- *      setup(){
- *          const storeState = useState(['xx','yy','zz'.....])
- *
- *          retrun {
- *             ...storeState
- *         }
- *      }
- */
-
