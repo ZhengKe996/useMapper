@@ -1,7 +1,7 @@
 import { useStore, mapGetters } from 'vuex'
 import { computed } from 'vue'
 
-export function useState (mapper) {
+export function useGetters (mapper) {
     // 拿到store对象
     const store = useStore()
 
@@ -9,10 +9,10 @@ export function useState (mapper) {
     const storeFunctions = mapGetters(mapper)
 
     // 对数据进行转换
-    const state = {}
+    const getters = {}
     Object.keys(storeFunctions).forEach(functionKey => {
-        state[functionKey] = computed(storeFunctions[functionKey].bind({ $store: store }))
+        getters[functionKey] = computed(storeFunctions[functionKey].bind({ $store: store }))
     })
-    return state
+    return getters
 }
 
