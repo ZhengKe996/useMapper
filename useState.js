@@ -4,7 +4,7 @@ import { useMapper } from './useMapper'
 export function useState (moduleName, mapper) {
     let mapperFunction = mapState
     if (typeof moduleName === 'string' && moduleName.length > 0) {
-        mapperFunction = createNamespacedHelpers(moduleName)
+        mapperFunction = createNamespacedHelpers(moduleName).mapState
     }
 
     return useMapper(mapper, mapperFunction)
